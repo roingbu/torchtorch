@@ -1,0 +1,4 @@
+具体脚本请参考OneNote
+
+# !stylegan2_pytorch --data "./cut" --name "try" --results_dir "./result" --models_dir "./model" --image-size 256 --num-workers 4 --num-train-steps 150000 --network-capacity 256 --attn-layers [1,2] --aug-prob 0.25 --aug-types [translation,cutout,color] --top-k-training --cl-reg --calculate-fid-every 5000 --log
+stylegan2_pytorch --data "./cut256" --name "try2" --results_dir "./result" --models_dir "./model" --image-size 256 --num-workers 2 --num-train-steps 300000 --network-capacity 16 --top-k-training --calculate-fid-every 10000 --log
