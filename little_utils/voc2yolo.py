@@ -8,7 +8,8 @@ from os import listdir, getcwd
 from os.path import join
 import shutil
 
-classes = ["person"]  # 类别
+classes = ["shapan"]  # 类别 # TODO:
+# classes = ["person", "car", "gray", "shapan"]  # 类别 # TODO:
 
 
 def convert(size, box):
@@ -56,11 +57,11 @@ def convert_annotation(input_path, image_id, save_path):
     shutil.copy('%s/JPEGImages/%s.jpg' % (input_path, image_id), image_path)
 
 if __name__ == "__main__":
-    voc_path = "/data/dataset/BDU_Voc"
+    voc_path = "data/vocbu-11-29"  # TODO:
     for oneset in ["train", "val"]:
         image_ids_train = open('%s/ImageSets/Main/%s.txt' % (voc_path, oneset)).read().strip().split()  # list格式只有000000 000001
         list_file_train = open('%s.txt' % (oneset), 'w')
-        save_path = "/data/dataset/BDU_yolov5/%s" % (oneset)
+        save_path = "data/vocbu-11-29/yolo/%s" % (oneset)  # TODO:
         for image_id in image_ids_train:
             list_file_train.write('%s/JPEGImages/%s.jpg\n' % (voc_path, image_id))
             convert_annotation(voc_path, image_id, save_path)
